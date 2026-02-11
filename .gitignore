@@ -1,0 +1,23 @@
+# OS
+.DS_Store
+
+# Editors
+*.swp
+*.swo
+*~
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment
+.env
+.venv/
+
+# Claude Code local
+.claude/skills/
+
+# Working dirs
+concepts/
+_originals/

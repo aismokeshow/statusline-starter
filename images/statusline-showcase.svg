@@ -1,0 +1,334 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 460" width="960" height="460">
+  <style>
+    text {
+      font-family: 'SF Mono', 'Fira Code', 'JetBrains Mono', Consolas, 'Courier New', monospace;
+      font-size: 14px;
+    }
+  </style>
+
+  <defs>
+    <clipPath id="rounded">
+      <rect x="0.5" y="0.5" width="959" height="459" rx="12" ry="12"/>
+    </clipPath>
+    <g id="flame">
+      <path d="M9 1 C7 3, 4 6.5, 3 10 C2 13.5, 4 16.5, 7.5 17 C11 17, 13.5 13.5, 13 10 C12.5 7, 10 4, 10 4 C10 4, 12 7.5, 11 10.5 C10.5 12, 9 12.5, 8.5 11 C8 9.5, 9 4, 9 1Z" fill="#FF8700"/>
+      <path d="M8.5 6 C7.5 8.5, 7 11, 7.5 13 C8 14.5, 10 14, 10.5 12 C11 10, 9.5 7.5, 8.5 6Z" fill="#FFD700"/>
+      <path d="M8.5 9.5 C8 11, 8 12.5, 8.5 13 C9 13.5, 9.5 13, 9.5 12 C9.5 11, 9 10, 8.5 9.5Z" fill="#FFEECC" opacity="0.5"/>
+    </g>
+  </defs>
+
+  <g clip-path="url(#rounded)">
+    <!-- Terminal background -->
+    <rect fill="#0d1117" width="960" height="460"/>
+
+    <!-- Title bar -->
+    <rect fill="#161b22" width="960" height="38"/>
+    <circle cx="20" cy="19" r="6" fill="#ff5f57"/>
+    <circle cx="40" cy="19" r="6" fill="#febc2e"/>
+    <circle cx="60" cy="19" r="6" fill="#28c840"/>
+    <text x="480" y="24" text-anchor="middle" fill="#8b949e" font-size="13">Token Budget Monitoring</text>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- STAGE 1: FRESH START                           -->
+    <!-- 2% context, no git, short path                 -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <line x1="32" y1="54" x2="928" y2="54" stroke="#30363d" stroke-width="0.5"/>
+    <text x="32" y="70" fill="#484f58" font-size="13">1 &#160; FRESH START</text>
+
+    <!-- Line 1: fire + model + path + session -->
+    <use href="#flame" transform="translate(32, 72) scale(1.15)"/>
+    <text x="56" y="92">
+      <tspan fill="#e6edf3" font-weight="bold">Opus 4.6</tspan>
+      <tspan fill="#484f58"> &#x2502; </tspan>
+      <tspan fill="#e6edf3" font-weight="bold">~/.cache/smoke-showcase/my-app</tspan>
+      <tspan fill="#484f58"> &#160; #a1b2c3d4</tspan>
+    </text>
+
+    <!-- Line 2: bar (0 filled / 20) + metrics -->
+    <g transform="translate(48, 101)">
+      <rect x="0" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="8" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="16" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="24" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="32" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="40" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="48" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="56" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="64" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="72" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="80" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="88" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="96" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="104" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="112" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <!-- Compact threshold marker (position 15 of 20) -->
+      <line x1="123" y1="-1" x2="123" y2="12" stroke="#484f58" stroke-width="1.5"/>
+      <rect x="128" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="136" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="144" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="152" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+    </g>
+    <text x="215" y="112">
+      <tspan fill="#8b949e">2%</tspan>
+      <tspan fill="#484f58"> of 200k</tspan>
+      <tspan fill="#484f58"> &#x2502; &#x23F1;</tspan>
+      <tspan fill="#8b949e"> 0s</tspan>
+      <tspan fill="#484f58"> &#x2502;</tspan>
+      <tspan fill="#8b949e"> $0.00</tspan>
+    </text>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- STAGE 2: LIGHT WORK                            -->
+    <!-- 25% context, Sonnet 4.5, git, lines changed    -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <line x1="32" y1="134" x2="928" y2="134" stroke="#30363d" stroke-width="0.5"/>
+    <text x="32" y="150" fill="#484f58" font-size="13">2 &#160; LIGHT WORK</text>
+
+    <!-- Line 1 -->
+    <use href="#flame" transform="translate(32, 152) scale(1.15)"/>
+    <text x="56" y="172">
+      <tspan fill="#e6edf3" font-weight="bold">Sonnet 4.5</tspan>
+      <tspan fill="#484f58"> &#x2502; </tspan>
+      <tspan fill="#e6edf3" font-weight="bold">~/.cache/smo&#x2026;ase/acm&#x2026;epo/apps/das&#x2026;ard/src</tspan>
+      <tspan fill="#484f58"> &#x2500;&#x2500; </tspan>
+      <tspan fill="#8b949e">main</tspan>
+      <tspan fill="#8b949e"> +2</tspan>
+      <tspan fill="#484f58"> ~5</tspan>
+      <tspan fill="#484f58"> (</tspan>
+      <tspan fill="#c9d1d9">monorepo</tspan>
+      <tspan fill="#484f58">)</tspan>
+      <tspan fill="#484f58"> &#160; #e5f6a7b8</tspan>
+    </text>
+
+    <!-- Line 2: bar (5 filled / 20) -->
+    <g transform="translate(48, 181)">
+      <rect x="0" width="7" height="11" rx="1.5" fill="#FF8700"/>
+      <rect x="8" width="7" height="11" rx="1.5" fill="#FF8700"/>
+      <rect x="16" width="7" height="11" rx="1.5" fill="#FF8700"/>
+      <rect x="24" width="7" height="11" rx="1.5" fill="#FF8700"/>
+      <rect x="32" width="7" height="11" rx="1.5" fill="#FF8700"/>
+      <rect x="40" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="48" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="56" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="64" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="72" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="80" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="88" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="96" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="104" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="112" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <line x1="123" y1="-1" x2="123" y2="12" stroke="#484f58" stroke-width="1.5"/>
+      <rect x="128" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="136" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="144" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="152" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+    </g>
+    <text x="215" y="192">
+      <tspan fill="#8b949e">25%</tspan>
+      <tspan fill="#484f58"> of 200k</tspan>
+      <tspan fill="#484f58"> &#x2502; &#x23F1;</tspan>
+      <tspan fill="#8b949e"> 3m 7s</tspan>
+      <tspan fill="#484f58"> &#x2502;</tspan>
+      <tspan fill="#8b949e"> $0.23</tspan>
+      <tspan fill="#484f58"> &#x2502;</tspan>
+      <tspan fill="#FF8700"> &#x2191;42</tspan>
+      <tspan fill="#484f58"> &#x2193;8</tspan>
+    </text>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- STAGE 3: DEEP SESSION                          -->
+    <!-- 55% context, transcript link                   -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <line x1="32" y1="214" x2="928" y2="214" stroke="#30363d" stroke-width="0.5"/>
+    <text x="32" y="230" fill="#484f58" font-size="13">3 &#160; DEEP SESSION</text>
+
+    <!-- Line 1 -->
+    <use href="#flame" transform="translate(32, 232) scale(1.15)"/>
+    <text x="56" y="252">
+      <tspan fill="#e6edf3" font-weight="bold">Opus 4.6</tspan>
+      <tspan fill="#484f58"> &#x2502; </tspan>
+      <tspan fill="#e6edf3" font-weight="bold">~/.cache/smo&#x2026;ase/acm&#x2026;epo/apps/das&#x2026;ard/src</tspan>
+      <tspan fill="#484f58"> &#x2500;&#x2500; </tspan>
+      <tspan fill="#8b949e">main</tspan>
+      <tspan fill="#8b949e"> +2</tspan>
+      <tspan fill="#484f58"> ~5</tspan>
+      <tspan fill="#484f58"> (</tspan>
+      <tspan fill="#c9d1d9">monorepo</tspan>
+      <tspan fill="#484f58">)</tspan>
+      <tspan fill="#484f58"> &#160; #c9d0e1f2</tspan>
+    </text>
+
+    <!-- Line 2: bar (11 filled / 20) -->
+    <g transform="translate(48, 261)">
+      <rect x="0" width="7" height="11" rx="1.5" fill="#FF8700"/>
+      <rect x="8" width="7" height="11" rx="1.5" fill="#FF8700"/>
+      <rect x="16" width="7" height="11" rx="1.5" fill="#FF8700"/>
+      <rect x="24" width="7" height="11" rx="1.5" fill="#FF8700"/>
+      <rect x="32" width="7" height="11" rx="1.5" fill="#FF8700"/>
+      <rect x="40" width="7" height="11" rx="1.5" fill="#FF8700"/>
+      <rect x="48" width="7" height="11" rx="1.5" fill="#FF8700"/>
+      <rect x="56" width="7" height="11" rx="1.5" fill="#FF8700"/>
+      <rect x="64" width="7" height="11" rx="1.5" fill="#FF8700"/>
+      <rect x="72" width="7" height="11" rx="1.5" fill="#FF8700"/>
+      <rect x="80" width="7" height="11" rx="1.5" fill="#FF8700"/>
+      <rect x="88" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="96" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="104" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="112" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <line x1="123" y1="-1" x2="123" y2="12" stroke="#484f58" stroke-width="1.5"/>
+      <rect x="128" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="136" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="144" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="152" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+    </g>
+    <text x="215" y="272">
+      <tspan fill="#8b949e">55%</tspan>
+      <tspan fill="#484f58"> of 200k</tspan>
+      <tspan fill="#484f58"> &#x2502; &#x23F1;</tspan>
+      <tspan fill="#8b949e"> 14m 7s</tspan>
+      <tspan fill="#484f58"> &#x2502;</tspan>
+      <tspan fill="#8b949e"> $1.37</tspan>
+      <tspan fill="#484f58"> &#x2502;</tspan>
+      <tspan fill="#FF8700"> &#x2191;156</tspan>
+      <tspan fill="#484f58"> &#x2193;23</tspan>
+      <tspan fill="#484f58"> &#x2502;</tspan>
+      <tspan fill="#484f58"> log</tspan>
+    </text>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- STAGE 4: WARNING ZONE                          -->
+    <!-- 68% context, SMOLDER bar, vim NORMAL mode      -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <line x1="32" y1="294" x2="928" y2="294" stroke="#30363d" stroke-width="0.5"/>
+    <text x="32" y="310" fill="#484f58" font-size="13">4 &#160; WARNING ZONE</text>
+
+    <!-- Line 1: fire + model + vim mode + path + git -->
+    <use href="#flame" transform="translate(32, 312) scale(1.15)"/>
+    <text x="56" y="332">
+      <tspan fill="#e6edf3" font-weight="bold">Opus 4.6</tspan>
+      <tspan fill="#484f58"> [</tspan>
+      <tspan fill="#e6edf3">NORMAL</tspan>
+      <tspan fill="#484f58">]</tspan>
+      <tspan fill="#484f58"> &#x2502; </tspan>
+      <tspan fill="#e6edf3" font-weight="bold">~/.cache/smo&#x2026;ase/acm&#x2026;epo/apps/das&#x2026;ard/src</tspan>
+      <tspan fill="#484f58"> &#x2500;&#x2500; </tspan>
+      <tspan fill="#8b949e">main</tspan>
+      <tspan fill="#8b949e"> +2</tspan>
+      <tspan fill="#484f58"> ~5</tspan>
+      <tspan fill="#484f58"> (</tspan>
+      <tspan fill="#c9d1d9">monorepo</tspan>
+      <tspan fill="#484f58">)</tspan>
+      <tspan fill="#484f58"> &#160; #a3b4c5d6</tspan>
+    </text>
+
+    <!-- Line 2: bar (13 filled SMOLDER / 20) -->
+    <g transform="translate(48, 341)">
+      <rect x="0" width="7" height="11" rx="1.5" fill="#FFD700"/>
+      <rect x="8" width="7" height="11" rx="1.5" fill="#FFD700"/>
+      <rect x="16" width="7" height="11" rx="1.5" fill="#FFD700"/>
+      <rect x="24" width="7" height="11" rx="1.5" fill="#FFD700"/>
+      <rect x="32" width="7" height="11" rx="1.5" fill="#FFD700"/>
+      <rect x="40" width="7" height="11" rx="1.5" fill="#FFD700"/>
+      <rect x="48" width="7" height="11" rx="1.5" fill="#FFD700"/>
+      <rect x="56" width="7" height="11" rx="1.5" fill="#FFD700"/>
+      <rect x="64" width="7" height="11" rx="1.5" fill="#FFD700"/>
+      <rect x="72" width="7" height="11" rx="1.5" fill="#FFD700"/>
+      <rect x="80" width="7" height="11" rx="1.5" fill="#FFD700"/>
+      <rect x="88" width="7" height="11" rx="1.5" fill="#FFD700"/>
+      <rect x="96" width="7" height="11" rx="1.5" fill="#FFD700"/>
+      <rect x="104" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="112" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <line x1="123" y1="-1" x2="123" y2="12" stroke="#484f58" stroke-width="1.5"/>
+      <rect x="128" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="136" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="144" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="152" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+    </g>
+    <text x="215" y="352">
+      <tspan fill="#FFD700">68%</tspan>
+      <tspan fill="#484f58"> of 200k</tspan>
+      <tspan fill="#484f58"> &#x2502; &#x23F1;</tspan>
+      <tspan fill="#8b949e"> 39m 0s</tspan>
+      <tspan fill="#484f58"> &#x2502;</tspan>
+      <tspan fill="#8b949e"> $3.82</tspan>
+      <tspan fill="#484f58"> &#x2502;</tspan>
+      <tspan fill="#FF8700"> &#x2191;489</tspan>
+      <tspan fill="#484f58"> &#x2193;167</tspan>
+      <tspan fill="#484f58"> &#x2502;</tspan>
+      <tspan fill="#484f58"> log</tspan>
+    </text>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- STAGE 5: CRITICAL                              -->
+    <!-- 82% context, COAL bar, double fire, agent,     -->
+    <!-- exceeds 200k warning                           -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <line x1="32" y1="374" x2="928" y2="374" stroke="#30363d" stroke-width="0.5"/>
+    <text x="32" y="390" fill="#484f58" font-size="13">5 &#160; CRITICAL</text>
+
+    <!-- Line 1: double fire + model + agent + path + git + warn -->
+    <use href="#flame" transform="translate(32, 392) scale(1.15)"/>
+    <use href="#flame" transform="translate(50, 392) scale(1.15)"/>
+    <text x="74" y="412">
+      <tspan fill="#e6edf3" font-weight="bold">Opus 4.6</tspan>
+      <tspan fill="#484f58"> [</tspan>
+      <tspan fill="#FF8700">researcher</tspan>
+      <tspan fill="#484f58">]</tspan>
+      <tspan fill="#484f58"> &#x2502; </tspan>
+      <tspan fill="#e6edf3" font-weight="bold">~/.cache/smo&#x2026;ase/acm&#x2026;epo/apps/das&#x2026;ard/src</tspan>
+      <tspan fill="#484f58"> &#x2500;&#x2500; </tspan>
+      <tspan fill="#8b949e">main</tspan>
+      <tspan fill="#8b949e"> +2</tspan>
+      <tspan fill="#484f58"> ~5</tspan>
+      <tspan fill="#484f58"> (</tspan>
+      <tspan fill="#c9d1d9">monorepo</tspan>
+      <tspan fill="#484f58">)</tspan>
+      <tspan fill="#484f58"> &#160; #e7f8a9b0</tspan>
+      <tspan fill="#FF0000"> [&gt;200k]</tspan>
+    </text>
+
+    <!-- Line 2: bar (16 filled COAL / 20, threshold hidden) -->
+    <g transform="translate(48, 421)">
+      <rect x="0" width="7" height="11" rx="1.5" fill="#FF0000"/>
+      <rect x="8" width="7" height="11" rx="1.5" fill="#FF0000"/>
+      <rect x="16" width="7" height="11" rx="1.5" fill="#FF0000"/>
+      <rect x="24" width="7" height="11" rx="1.5" fill="#FF0000"/>
+      <rect x="32" width="7" height="11" rx="1.5" fill="#FF0000"/>
+      <rect x="40" width="7" height="11" rx="1.5" fill="#FF0000"/>
+      <rect x="48" width="7" height="11" rx="1.5" fill="#FF0000"/>
+      <rect x="56" width="7" height="11" rx="1.5" fill="#FF0000"/>
+      <rect x="64" width="7" height="11" rx="1.5" fill="#FF0000"/>
+      <rect x="72" width="7" height="11" rx="1.5" fill="#FF0000"/>
+      <rect x="80" width="7" height="11" rx="1.5" fill="#FF0000"/>
+      <rect x="88" width="7" height="11" rx="1.5" fill="#FF0000"/>
+      <rect x="96" width="7" height="11" rx="1.5" fill="#FF0000"/>
+      <rect x="104" width="7" height="11" rx="1.5" fill="#FF0000"/>
+      <rect x="112" width="7" height="11" rx="1.5" fill="#FF0000"/>
+      <rect x="120" width="7" height="11" rx="1.5" fill="#FF0000"/>
+      <!-- No threshold — filled past it (16 > 15) -->
+      <rect x="128" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="136" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="144" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+      <rect x="152" width="7" height="11" rx="1.5" fill="#161b22" stroke="#2d333b" stroke-width="0.75"/>
+    </g>
+    <text x="215" y="432">
+      <tspan fill="#FF0000">82%</tspan>
+      <tspan fill="#484f58"> of 200k</tspan>
+      <tspan fill="#484f58"> &#x2502; &#x23F1;</tspan>
+      <tspan fill="#8b949e"> 1h 22m</tspan>
+      <tspan fill="#484f58"> &#x2502;</tspan>
+      <tspan fill="#8b949e"> $7.14</tspan>
+      <tspan fill="#484f58"> &#x2502;</tspan>
+      <tspan fill="#FF8700"> &#x2191;812</tspan>
+      <tspan fill="#484f58"> &#x2193;341</tspan>
+      <tspan fill="#484f58"> &#x2502;</tspan>
+      <tspan fill="#484f58"> log</tspan>
+    </text>
+
+    <!-- Subtle branding -->
+    <text x="928" y="454" text-anchor="end" fill="#21262d" font-size="10">aismokeshow.com</text>
+  </g>
+
+  <!-- Border -->
+  <rect x="0.5" y="0.5" width="959" height="459" rx="12" ry="12" stroke="#30363d" stroke-width="1" fill="none"/>
+</svg>
