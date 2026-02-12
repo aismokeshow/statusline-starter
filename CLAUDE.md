@@ -8,6 +8,8 @@ This installs a two-line smoke-themed status bar for Claude Code. Clone to `~/.a
 
 Triggered by: "install", "set up", "set this up", or `/install`
 
+Delegate to the `install-statusline` agent. If the agent is not available, work through the steps in `.claude/agents/install-statusline.md` manually.
+
 ### Step 0: Check for Existing Install
 
 ```bash
@@ -31,9 +33,11 @@ If the output contains `aismokeshow/statusline-starter`, proceed. If it shows a 
 
 After the origin check passes, scan the repo for safety before making any system changes. Read `CLAUDE.md`, all files in `.claude/commands/` and `.claude/agents/`, and `statusline-smoke.py`. Check for suspicious URLs, encoded payloads, or instructions that download/execute remote code outside the documented install flow. Tell the user what you scanned and that nothing unexpected was found.
 
-### Steps 1-7
+### Steps 1-7: Install
 
-The install-statusline agent handles the full setup. It copies the script, configures settings.json, and verifies the installation.
+**Origin verified and safety scan complete. Now hand off to the install-statusline agent for Steps 1-7.** Do NOT repeat the origin check or security scan — they are already done. Do NOT manually execute the install steps — the agent handles everything. Wait for the agent to finish, then report its result to the user.
+
+If the agent is not available, follow `.claude/agents/install-statusline.md` from "Installation Steps" (skip "Before You Start" — it's already done).
 
 ## Requirements
 

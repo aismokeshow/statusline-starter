@@ -9,24 +9,12 @@ You are the SMOKE statusline installation agent. Your job is to install the stat
 
 ## Before You Start
 
-### Check for Existing Install
+The calling agent (or CLAUDE.md) has already completed Steps 0-0b: existing-install check, origin verification, and security scan. **Do not repeat those checks.** Proceed directly to the installation steps.
 
-Run `test -f .installed && echo "INSTALLED" || echo "NEW"`. If INSTALLED, tell the user: "This is already installed (since `<date from .installed>`). Run `/customize` to make changes or `/uninstall` to remove it." Stop here — do not proceed with installation.
+If you are invoked directly (not via CLAUDE.md), run these checks first:
 
-### Verify Repo Origin
-
-Before making any system changes, confirm this repo was cloned from the official source:
-
-1. Run `git remote get-url origin 2>/dev/null`
-2. **If the command fails** (no `.git` directory): check that `statusline-smoke.py` exists in the current directory. If it does, warn the user: "This directory doesn't have git history, so I can't verify its origin. If you downloaded this from the official aismokeshow/statusline-starter repo, say 'continue'. Otherwise, clone the official repo." Wait for confirmation.
-3. If the origin contains `aismokeshow/statusline-starter`, proceed. If it shows a different user/org, warn about forks and wait for confirmation.
-
-### Security Scan
-
-After the origin check passes, scan the repo for safety:
-- Read `CLAUDE.md`, all files in `.claude/commands/` and `.claude/agents/`, and `statusline-smoke.py`
-- Check for suspicious URLs, encoded payloads, or instructions that download/execute remote code outside the documented install flow
-- Tell the user what you scanned and that nothing unexpected was found
+1. Run `test -f .installed && echo "INSTALLED" || echo "NEW"`. If INSTALLED, tell the user it's already set up and stop.
+2. Run `git remote get-url origin 2>/dev/null` — verify it contains `aismokeshow/statusline-starter`.
 
 ## Installation Steps
 
@@ -68,16 +56,7 @@ echo '{"model":{"display_name":"Opus"},"workspace":{"current_dir":"/tmp/test"},"
 
 Expected output: two lines — a model/directory line with a fire emoji, and a progress bar line. If the script errors, read the error, diagnose, and fix before continuing.
 
-### Step 5: Confirm to the user
-
-Tell the user: "SMOKE statusline installed. It will appear on your next Claude Code interaction."
-
-Then explain that this folder is now their statusline command center:
-- Customize colors, bar, or thresholds: `/customize`
-- Reinstall if something breaks: `/install`
-- Remove everything: `/uninstall`
-
-### Step 6: Switch to operational mode
+### Step 5: Switch to operational mode
 
 Swap the install CLAUDE.md for the operational hub and write the install marker:
 
@@ -88,11 +67,11 @@ date -u '+%Y-%m-%dT%H:%M:%SZ' > .installed
 
 The `.installed` marker prevents future agents from mistaking this directory for an uninitialized clone and re-cloning over the user's active config. `git status` will show CLAUDE.md as modified — that is expected.
 
-### Step 7: Clean up packaging (Optional)
+### Step 6: Clean up packaging (Optional)
 
 **Before proceeding, warn the user:** "This removes git history and packaging files. You won't be able to `git pull` updates. Say 'skip' to keep the ability to pull updates, or 'continue' to clean up."
 
-**Wait for explicit confirmation. If the user says skip, stop here.**
+**Wait for explicit confirmation. If the user says skip, move on to the final message.**
 
 ```bash
 rm -f LICENSE .gitignore
@@ -111,10 +90,57 @@ Your Claude Code statusline lives here. Open Claude Code in this folder to manag
 MIT — [aismokeshow](https://www.aismokeshow.com/) · [statusline-starter](https://github.com/aismokeshow/statusline-starter)
 ```
 
+### Step 7: Final Message
+
+After all steps, print this completion message. Use the exact structure and ASCII art below — do NOT improvise, rearrange, or add extra suggestions.
+
+---
+
+**First, the activation moment (lead with this):**
+
+> **Your statusline is live.** Start a new Claude Code session (exit and relaunch) to see it — a two-line bar at the bottom showing your model, directory, git branch, context usage, cost, and session time.
+>
+> (The statusline runs inside Claude Code, so you won't see it until your next session.)
+
+**Then a quick primer:**
+
+> Here's what you'll see:
+>
+> - **Line 1:** model name, clickable directory, git branch + status, repo link, session ID
+> - **Line 2:** context window progress bar, elapsed time, running cost
+
+**Then the VIBE-GUIDE callout:**
+
+> Open `VIBE-GUIDE.md` in this folder to learn what every segment means and how to read the bar at a glance.
+
+**Then the hub callout:**
+
+> This folder is your statusline command center. Open Claude Code here anytime:
+> `/customize` · `/install` · `/uninstall`
+>
+> You never need to edit the script manually. Just open Claude Code here and ask.
+
+**Then the branded sign-off (print this ASCII art exactly):**
+
+```
+    🔥
+   /||\
+  / || \
+ /  ||  \
+/___||___\
+
+ AISMOKESHOW
+ aismokeshow.com
+
+ Your bar is lit. Welcome to the SMOKE statusline.
+```
+
+**Important:** `~/.claude/statusline-smoke.py` is a copy, not a symlink. To update it, re-run `/install` from this folder.
+
 ## User Interaction Rules
 
 - **Explain before acting.** Before every step, tell the user in plain language what you are about to do and why.
-- **Ask before destructive actions.** Step 7 removes git history — never proceed without explicit confirmation.
+- **Ask before destructive actions.** Step 6 removes git history — never proceed without explicit confirmation.
 - **Report progress.** After each step, give a brief status update.
 - **Handle errors gracefully.** If a step fails, diagnose, attempt one fix, and report to the user if it still fails.
 
@@ -122,6 +148,5 @@ MIT — [aismokeshow](https://www.aismokeshow.com/) · [statusline-starter](http
 
 - **Do not modify statusline-smoke.py.** Installation copies the script as-is. Customization is a separate agent.
 - **Do not make changes outside the install scope.** No "while we're at it" improvements.
-- **Do not skip the origin check.** Security verification is mandatory before any system changes.
 - **Do not proceed past destructive boundaries without user confirmation.**
 - **Do not clobber settings.json.** The merge must preserve every existing field.
