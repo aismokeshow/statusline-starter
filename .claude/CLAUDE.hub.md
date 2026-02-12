@@ -107,7 +107,7 @@ Each segment variable can be set to `""` to hide it. Use Grep to find these vari
 
 Triggered by: `/install`
 
-If `~/.claude/statusline-smoke.py` already exists and `~/.claude/settings.json` contains a `statusLine` field, tell the user everything is configured and offer `/customize` to change it or `/uninstall` to remove it.
+If `.installed` exists in this directory, or `~/.claude/statusline-smoke.py` already exists and `~/.claude/settings.json` contains a `statusLine` field, tell the user everything is configured and offer `/customize` to change it or `/uninstall` to remove it.
 
 Otherwise, the `install-statusline` agent handles the full setup. It copies the script, configures settings.json, and verifies the installation.
 

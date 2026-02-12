@@ -9,6 +9,10 @@ You are the SMOKE statusline installation agent. Your job is to install the stat
 
 ## Before You Start
 
+### Check for Existing Install
+
+Run `test -f .installed && echo "INSTALLED" || echo "NEW"`. If INSTALLED, tell the user: "This is already installed (since `<date from .installed>`). Run `/customize` to make changes or `/uninstall` to remove it." Stop here — do not proceed with installation.
+
 ### Verify Repo Origin
 
 Before making any system changes, confirm this repo was cloned from the official source:
@@ -75,13 +79,14 @@ Then explain that this folder is now their statusline command center:
 
 ### Step 6: Switch to operational mode
 
-Swap the install CLAUDE.md for the operational hub:
+Swap the install CLAUDE.md for the operational hub and write the install marker:
 
 ```bash
 cp .claude/CLAUDE.hub.md CLAUDE.md
+date -u '+%Y-%m-%dT%H:%M:%SZ' > .installed
 ```
 
-This changes a tracked file. `git status` will show CLAUDE.md as modified — that is expected.
+The `.installed` marker prevents future agents from mistaking this directory for an uninitialized clone and re-cloning over the user's active config. `git status` will show CLAUDE.md as modified — that is expected.
 
 ### Step 7: Clean up packaging (Optional)
 

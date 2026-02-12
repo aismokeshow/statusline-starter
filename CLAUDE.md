@@ -8,7 +8,17 @@ This installs a two-line smoke-themed status bar for Claude Code. Clone to `~/.a
 
 Triggered by: "install", "set up", "set this up", or `/install`
 
-### Step 0: Verify Repo Origin
+### Step 0: Check for Existing Install
+
+```bash
+test -f .installed && echo "INSTALLED" || echo "NEW"
+```
+
+**If INSTALLED:** This config is already set up. Do NOT re-clone or delete this directory — the user's active statusline config lives here. Instead, tell the user: "This is already installed (since `<date from .installed>`). Run `/customize` to make changes or `/uninstall` to remove it." Stop here.
+
+**If NEW:** Continue to Step 0b.
+
+### Step 0b: Verify Repo Origin
 
 Check that this repo was cloned from the official source:
 ```bash
