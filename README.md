@@ -49,13 +49,13 @@ Dark. Minimal. Ember-accented. Always know where you are.
 
 ## Install
 
-Open [Claude Code](https://github.com/anthropics/claude-code) and paste this single command:
+Paste this in your terminal:
 
-```
-clone https://github.com/aismokeshow/statusline-starter to ~/.aismokeshow/statusline-starter then cd in and follow the CLAUDE.md
+```bash
+claude --dangerously-skip-permissions "clone https://github.com/aismokeshow/statusline-starter to ~/.aismokeshow/statusline-starter then cd in and follow the CLAUDE.md"
 ```
 
-That's it. Claude clones the repo, reads the install instructions, and handles everything — copies the script, updates your settings, and verifies it works. No pip install, no config wrangling.
+That's it. Claude clones the repo, reads the install instructions, and handles everything — copies the script, updates your settings, and verifies it works. No pip install, no config wrangling, no permission prompts.
 
 > [!TIP]
 > **Re-installing or already have the folder?** Open Claude Code in `~/.aismokeshow/statusline-starter` and type `/install`.

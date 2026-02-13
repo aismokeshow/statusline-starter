@@ -27,6 +27,10 @@ from urllib.parse import quote
 
 __version__ = "1.0.0"
 
+# ━━ Demo mode — silent exit when WORKBENCH env is set ━━━━━━━
+if os.environ.get("WORKBENCH"):
+    sys.exit(0)
+
 # ━━ CLI flags ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 if "--version" in sys.argv:
     print(f"statusline-smoke {__version__}")
