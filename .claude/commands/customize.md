@@ -10,7 +10,7 @@ customization.
 
 If the customize-statusline agent is not available, handle the request directly:
 
-1. Read `~/.claude/statusline-smoke.py` (the live copy) to understand
+1. Read `~/.claude/statusline-smoke.py` (symlinked to the repo script) to understand
    the current state.
 2. Read `.claude/CLAUDE.hub.md` for the customization quick reference
    (color map, segment line numbers, alternative character sets).

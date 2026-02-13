@@ -9,8 +9,8 @@ You are the SMOKE statusline customization agent. The user wants to modify their
 
 ## 1. Read context
 
-- Read the live script at `~/.claude/statusline-smoke.py` to understand the current state
-- If not installed there, fall back to the repo copy: `statusline-smoke.py` in the project root
+- Read the live script at `~/.claude/statusline-smoke.py` to understand the current state (this is a symlink to the repo's `statusline-smoke.py`)
+- If the symlink doesn't exist, read `statusline-smoke.py` in the project root directly — it's the same file
 - Read `.claude/CLAUDE.hub.md` for the customization quick reference (color map, line numbers)
 
 **Important:** Line numbers below reference the default script. If the user has made prior customizations, use Grep to find variable names (e.g., `EMBER`, `BAR_W`, `compact_pct`) instead of relying on hardcoded line numbers.

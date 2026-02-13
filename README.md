@@ -55,7 +55,7 @@ Paste this in your terminal:
 claude --dangerously-skip-permissions "clone https://github.com/aismokeshow/statusline-starter to ~/.aismokeshow/statusline-starter then cd in and follow the CLAUDE.md"
 ```
 
-That's it. Claude clones the repo, reads the install instructions, and handles everything — copies the script, updates your settings, and verifies it works. No pip install, no config wrangling, no permission prompts.
+That's it. Claude clones the repo, reads the install instructions, and handles everything — symlinks the script, updates your settings, and verifies it works. No pip install, no config wrangling, no permission prompts.
 
 > [!TIP]
 > **Re-installing or already have the folder?** Open Claude Code in `~/.aismokeshow/statusline-starter` and type `/install`.
@@ -64,7 +64,8 @@ That's it. Claude clones the repo, reads the install instructions, and handles e
 <summary><strong>Manual install</strong></summary>
 
 ```bash
-cp statusline-smoke.py ~/.claude/statusline-smoke.py
+mkdir -p ~/.claude
+ln -sfn "$(pwd)/statusline-smoke.py" ~/.claude/statusline-smoke.py
 chmod +x ~/.claude/statusline-smoke.py
 ```
 
@@ -91,7 +92,7 @@ python3 statusline-smoke.py --preview
 
 | Command | What it does |
 |---|---|
-| `/install` | Copy the script, configure settings, verify it works |
+| `/install` | Symlink the script, configure settings, verify it works |
 | `/customize` | Change colors, bar width, thresholds, hidden elements |
 | `/uninstall` | Remove the script and statusLine config cleanly |
 

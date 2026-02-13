@@ -13,16 +13,23 @@ The calling agent (or CLAUDE.md) has already completed Steps 0-0b: existing-inst
 
 If you are invoked directly (not via CLAUDE.md), run these checks first:
 
-1. Run `test -f .installed && echo "INSTALLED" || echo "NEW"`. If INSTALLED, tell the user it's already set up and stop.
+1. Run `test -f .installed && echo "INSTALLED" || echo "NEW"`. If INSTALLED, run `git pull --ff-only 2>/dev/null || true`, verify `~/.claude/statusline-smoke.py` is a symlink to this repo (fix with `ln -sfn` if it's a stale copy), then tell the user it's up to date and stop.
 2. Run `git remote get-url origin 2>/dev/null` — verify it contains `aismokeshow/statusline-starter`.
 
 ## Installation Steps
 
 Work through each step in order. Explain what you are about to do before doing it.
 
-### Step 1: Copy the script
+### Step 1: Symlink the script
 
-Copy `statusline-smoke.py` from the project directory to `~/.claude/statusline-smoke.py`. Create `~/.claude/` with `mkdir -p` if it does not exist.
+Create a symlink from `~/.claude/statusline-smoke.py` pointing to the project's `statusline-smoke.py`. Create `~/.claude/` with `mkdir -p` if it does not exist.
+
+```bash
+mkdir -p ~/.claude
+ln -sfn "$(pwd)/statusline-smoke.py" ~/.claude/statusline-smoke.py
+```
+
+This symlink means `git pull` updates the live script automatically — no re-install needed.
 
 ### Step 2: Make it executable
 
@@ -69,9 +76,11 @@ The `.installed` marker prevents future agents from mistaking this directory for
 
 ### Step 6: Clean up packaging (Optional)
 
-**Before proceeding, warn the user:** "This removes git history and packaging files. You won't be able to `git pull` updates. Say 'skip' to keep the ability to pull updates, or 'continue' to clean up."
+Tell the user:
 
-**Wait for explicit confirmation. If the user says skip, move on to the final message.**
+> **Skip or clean up?** Say "skip" to keep git history (you can `git pull` updates later). Say "continue" to remove git history and packaging files — this is permanent.
+
+**Wait for explicit confirmation. Default to skip if unclear.**
 
 ```bash
 rm -f LICENSE .gitignore
@@ -83,7 +92,7 @@ Replace the README with a minimal operational one:
 ```
 # SMOKE Statusline
 
-Your Claude Code statusline lives here. Open Claude Code in this folder to manage it.
+Your Claude Code statusline config. To manage it: `cd ~/.aismokeshow/statusline-starter && claude`
 
 `/customize` · `/install` · `/uninstall`
 
@@ -135,7 +144,7 @@ After all steps, print this completion message. Use the exact structure and ASCI
  Your bar is lit. Welcome to the SMOKE statusline.
 ```
 
-**Important:** `~/.claude/statusline-smoke.py` is a copy, not a symlink. To update it, re-run `/install` from this folder.
+**Important:** `~/.claude/statusline-smoke.py` is a symlink pointing to this folder. Do not move or delete `~/.aismokeshow/statusline-starter/` — the live statusline depends on it.
 
 ## User Interaction Rules
 
@@ -146,7 +155,7 @@ After all steps, print this completion message. Use the exact structure and ASCI
 
 ## What You Must NOT Do
 
-- **Do not modify statusline-smoke.py.** Installation copies the script as-is. Customization is a separate agent.
+- **Do not modify statusline-smoke.py.** Installation symlinks the script as-is. Customization is a separate agent.
 - **Do not make changes outside the install scope.** No "while we're at it" improvements.
 - **Do not proceed past destructive boundaries without user confirmation.**
 - **Do not clobber settings.json.** The merge must preserve every existing field.

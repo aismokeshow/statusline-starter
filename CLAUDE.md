@@ -16,7 +16,21 @@ Delegate to the `install-statusline` agent. If the agent is not available, work 
 test -f .installed && echo "INSTALLED" || echo "NEW"
 ```
 
-**If INSTALLED:** This config is already set up. Do NOT re-clone or delete this directory — the user's active statusline config lives here. Instead, tell the user: "This is already installed (since `<date from .installed>`). Run `/customize` to make changes or `/uninstall` to remove it." Stop here.
+**If INSTALLED:** Pull latest and verify the symlink is intact:
+
+```bash
+git pull --ff-only 2>/dev/null || true
+```
+
+Then check whether `~/.claude/statusline-smoke.py` is a symlink pointing to this repo:
+
+```bash
+readlink ~/.claude/statusline-smoke.py 2>/dev/null
+```
+
+- **If it's a symlink to this repo's `statusline-smoke.py`:** Tell the user: "Already installed (since `<date from .installed>`). Pulled latest — your statusline is symlinked, so updates are live immediately. Run `/customize` to make changes or `/uninstall` to remove." Stop here.
+- **If it's a regular file (not a symlink) or the symlink points elsewhere:** The user has a stale copy from a previous install. Fix it by re-creating the symlink: `ln -sfn "$(pwd)/statusline-smoke.py" ~/.claude/statusline-smoke.py`. Tell the user you upgraded from a copy to a symlink so future `git pull` updates are automatic. Stop here.
+- **If the file doesn't exist:** The script was removed but `.installed` marker remains. Continue to Step 0a to re-install.
 
 **If NEW:** Continue to Step 0a.
 
