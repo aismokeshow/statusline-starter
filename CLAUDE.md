@@ -18,7 +18,17 @@ test -f .installed && echo "INSTALLED" || echo "NEW"
 
 **If INSTALLED:** This config is already set up. Do NOT re-clone or delete this directory — the user's active statusline config lives here. Instead, tell the user: "This is already installed (since `<date from .installed>`). Run `/customize` to make changes or `/uninstall` to remove it." Stop here.
 
-**If NEW:** Continue to Step 0b.
+**If NEW:** Continue to Step 0a.
+
+### Step 0a: Pull Latest
+
+If the directory has a `.git` folder, pull to ensure you're working with the latest code:
+
+```bash
+git pull --ff-only 2>/dev/null || true
+```
+
+This handles the common case where the user tried installing before but didn't finish — the directory exists with stale code. The `--ff-only` flag prevents merge conflicts; `|| true` ensures it doesn't block if offline or on a detached HEAD.
 
 ### Step 0b: Verify Repo Origin
 
